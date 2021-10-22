@@ -413,7 +413,7 @@ body {
 .add_item {
     text-align: right;
     padding-right: 20px;
-    padding-top: 15px;
+    padding-top: 8px;
 }
 
 .add_to_cart {
@@ -421,13 +421,66 @@ body {
     color: #fd83a6;
     border-radius: 50%;
     box-shadow: 0px 0px 5px 2px #fd83a6;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 24px;
+    padding: 3px;
 }
 
-.add_to_cart:hover{
-    box-shadow: 0px 0px 7px 3px #fd83a6;
+
+.tooltipDiv {
+    position: fixed;
+    bottom: 65px;
+    left: 42%;
+    z-index: 120;
+    transition: all 0.7s;
+    opacity: 0;
 }
+
+.opacity1{
+    opacity: 1;
+}
+
+.tooltip {
+    width: 120px;
+    background-color: #fd83a6;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.arrow {
+    width: 15px;
+    height: 15px;
+    background: #fd83a6;
+    margin-left: 55px;
+    transform: rotate(135deg);
+    margin-top: -7px;
+    z-index: -10;
+    position: relative;
+}
+
+.anim{
+    animation: anim 0.2s;
+}
+
+@keyframes anim {
+    0%{
+        background: #fff;
+    }
+    50%{
+        background-color: rgb(187, 184, 184);
+    }
+    100%{
+        background-color: #fff;
+    }
+}
+
+
+
+
+
 
 .leafImg {
     margin-bottom: -7px;
@@ -942,7 +995,7 @@ td:nth-child(3n){
 
  /* The new nav scrollspy nav bar CSS  */
  .circular_num {
-    background-color: #f772dd;
+    background-color: #ff8aac;
     color: #221f1f;
     font-weight: bold;
     border-radius: 50%;

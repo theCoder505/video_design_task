@@ -320,6 +320,22 @@
 <script>
 
 
+    $(".add_to_cart").click(function () {
+        $(this).addClass("anim");
+        $(".tooltipDiv").addClass("opacity1");
+        
+        setTimeout(function(){
+            $(".anim").removeClass("anim");
+        }, 200);
+
+        setTimeout(function(){
+            $(".tooltipDiv").removeClass("opacity1");
+        }, 2000);
+
+    });
+
+
+
     // processing the timeHolder search and catagory menu on scroll in body 
     var catNumItems = $('.catagory').length;
     $("body").scroll(function () {

@@ -290,7 +290,14 @@
 
 
 <script>
+    $(".add_to_cart").click(function () {
+        $(this).addClass("anim");
+        
+        setTimeout(function(){
+            $(".anim").removeClass("anim");
+        }, 200);
 
+    });
 
     // processing the timeHolder search and catagory menu on scroll in body 
     var catNumItems = $('.catagory').length;
