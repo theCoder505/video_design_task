@@ -280,15 +280,15 @@ function dranken(event) {
       success: function (data) {
         $("#catagories_nav").html(data);
 
-         //  this fun ction is for start changed menu from the start 
-         var scndDivHght = document.getElementById("secondFixedDiv").offsetHeight;
-         var brandDivHght = document.getElementById("brand").offsetHeight;
-         var catagoryDivHght = document.getElementById("catagories_nav").offsetHeight;
-         var timeHolderHght = document.getElementById("timeHolder").offsetHeight;
-         var totalHght = (scndDivHght + brandDivHght + catagoryDivHght + timeHolderHght);
-         if ($("#secondFixedDiv").hasClass("secondFixed")) {
-           $("body").animate({ scrollTop: totalHght + 20 }, 15);
-         }
+        //  this fun ction is for start changed menu from the start 
+        var scndDivHght = document.getElementById("secondFixedDiv").offsetHeight;
+        var brandDivHght = document.getElementById("brand").offsetHeight;
+        var catagoryDivHght = document.getElementById("catagories_nav").offsetHeight;
+        var timeHolderHght = document.getElementById("timeHolder").offsetHeight;
+        var totalHght = (scndDivHght + brandDivHght + catagoryDivHght + timeHolderHght);
+        if ($("#secondFixedDiv").hasClass("secondFixed")) {
+          $("body").animate({ scrollTop: totalHght + 20 }, 15);
+        }
 
       }
     });
@@ -375,20 +375,30 @@ document.addEventListener('keydown', function (event) {
 
 // double click disableing 
 
-// var doubleTouchStartTimestamp = 0;
-// document.querySelector("html").addEventListener("touchstart", function(double){
-//     var now = +(new Date());
-//     if (doubleTouchStartTimestamp + 500 > now){
-//         double.preventDefault();
-//         console.log("made it single click");
-//     };
-//     doubleTouchStartTimestamp = now;
-// });
+var doubleTouchStartTimestamp = 0;
+document.querySelector("html").addEventListener("touchstart", function(double){
+    var now = +(new Date());
+    if (doubleTouchStartTimestamp + 500 > now){
+        double.preventDefault();
+    };
+    doubleTouchStartTimestamp = now;
+});
 
 
-document.querySelector("html").addEventListener('dblclick', function(el) {
+
+
+document.querySelector("html").addEventListener('dblclick', function (el) {
   el.preventDefault();
 });
+
+
+$(".common").dblclick(function (el) {
+  el.preventDefault();
+});
+
+
+
+
 
 
 
