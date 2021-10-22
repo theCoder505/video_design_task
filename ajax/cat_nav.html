@@ -1,0 +1,46 @@
+<div data-id="warm_dranken" class="catagory item_1 active_cat">Warme&nbsp;Draken</div>
+<div data-id="frids_dranken" class="catagory item_2">FriedRanken</div>
+<div data-id="bieren_dranken" class="catagory item_3">Biren</div>
+<div data-id="witteper_dranken" class="catagory item_4"> Witte&nbsp;Wizen&nbsp;Per </div>
+
+
+<script>
+
+
+
+    // particular menu like as: dranken / Menu / Desert clicks and scroll controls!... 
+
+    // catagory clicks and events 
+    $(".catagory").click(function () {
+        $(".catagory").removeClass("active_cat");
+        $(this).addClass("active_cat");
+
+        var dataId = $(this).attr("data-id");
+
+        var warmTop = document.getElementById(dataId).offsetTop;
+
+        var scndDivHght = document.getElementById("secondFixedDiv").offsetHeight;
+        var brandDivHght = document.getElementById("brand").offsetHeight;
+        var catagoryDivHght = document.getElementById("catagories_nav").offsetHeight;
+
+        var totalHght = (warmTop - scndDivHght - brandDivHght - catagoryDivHght);
+
+
+
+        var catNumItems = $('.catagory').length;
+
+        if (($(this).hasClass("item_" + catNumItems))) {
+            $("body").animate({ scrollTop: totalHght  }, 100);
+        }
+        else {
+            $("body").animate({ scrollTop: totalHght }, 100);
+        }
+
+
+    });
+
+
+
+
+
+</script>

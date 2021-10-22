@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>URL Shift Skip</title>
+    <link rel="shortcut icon" href="images/bill.svg" type="image/x-icon">
+</head>
+
+<body>
+
+
+
+    <main>
+
+        <!-- this is the top brand name and menu icon holder will stay here fixed  -->
+        <div id="brand">
+            <span class="menuBar" onclick="activeLeftMenu()">
+                <i class="material-icons"> menu </i>
+            </span>
+
+            <span class="royal">
+                ROYAL FOOK LONG AMSTERDAM-2
+            </span>
+        </div>
+
+        <div class="spacer"></div>
+
+
+        <!-- the homa page section  -->
+        <div class="common_section home_page">
+            <div class="banner">
+                <img src="images/mainBanner.jpg" alt="" class="bannerImg">
+            </div>
+
+
+
+            <div id="timeHolder" class="grid_layout">
+
+
+                <div class="time common">
+                    <div class="imgDiv">
+                        <img src="images/clock.svg" alt="" class="iconImg">
+                    </div>
+                    <div class="text_holder">
+                        <div class="bold"> 43 min </div>
+                        <div class="part_name"> Time </div>
+                    </div>
+                </div>
+
+                <div class="rounds common">
+                    <div class="imgDiv">
+                        <img src="images/bill.svg" alt="" class="iconImg">
+                    </div>
+                    <div class="text_holder">
+                        <div class="bold"> 4 / <span class="infinite"> &infin; </span> </div>
+                        <div class="part_name"> Rounds </div>
+                    </div>
+                </div>
+
+                <div class="dishes common">
+                    <div class="imgDiv">
+                        <img src="images/dishes.svg" alt="" class="iconImg">
+                    </div>
+                    <div class="text_holder">
+                        <div class="bold"> 0 / 20 </div>
+                        <div class="part_name"> Dishes </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <!-- secondFixed  -->
+            <div id="secondFixedDiv" class="">
+
+                <!-- search is commented out  -->
+                <!-- <div class="wrapper">
+                    <div class="search_input">
+                        <a href="" target="_blank" hidden></a>
+                        <input type="text" placeholder="What are you Craving for?">
+                        <div class="autocom_box" id="autocom_box">
+                            here list are inserted from javascript 
+                        </div>
+                        <div class="icon"><i class="fas fa-search"></i></div>
+                    </div>
+                </div> -->
+
+
+
+                <div id="drnkn_mnu_dsrt">
+                    <center>
+
+                        <button class="common_btn cmn_btn_draken activated" onclick="dranken('cmn_btn_draken')">
+                            <img src="images/drink.svg" alt="" class="menuImgs">
+                            Dranken
+                        </button>
+
+                        <button class="common_btn cmn_btn_menu" onclick="dranken('cmn_btn_menu')">
+                            <img src="images/r-menu.svg" alt="" class="menuImgs">
+                            Menu
+                        </button>
+
+                        <button class="common_btn cmn_btn_desert" onclick="dranken('cmn_btn_desert')">
+                            <img src="images/dessert.svg" alt="" class="menuImgs">
+                            Desert
+                        </button>
+
+                    </center>
+                </div>
+
+
+
+
+                <!-- as there can't be any space in between texts as it follows CSS flexbox with
+                    position absolute, thus &nbsp; is used there for spac  -->
+                <!-- here data comes by ajax request  -->
+                <div id="catagories_nav">
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="spacer_catagory"></div>
+
+
+
+            <!-- home items all  -->
+            <div id="catagory_all_items">
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- billing section  -->
+        <section id="billings" class="common_section billing_page d_none">
+
+            <div class="your_bill">
+                Your bill - Table 2
+            </div>
+
+            <div class="select_bill">
+
+                <label onclick="showSpecBill('show_bill')">
+                    <input type="radio" name="select_opt" id="" checked>
+                    <span class="circle"></span>
+                    <span class="spanClass"> Show Bill </span>
+                </label>
+
+                <label onclick="showSpecBill('show_orders')">
+                    <input type="radio" name="select_opt" id="">
+                    <span class="circle"></span>
+                    <span class="spanClass"> Show Orders </span>
+                </label>
+
+            </div>
+
+            <div class="show_hide_order show_bill ">
+
+                <table border="0">
+                    <tr>
+                        <td>4x</td>
+                        <td>Diner Maandag t/m Woensdag</td>
+                        <td>€130.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td>Sourcy Blue 0.75L</td>
+                        <td>€15.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td> Lipton Green Tea </td>
+                        <td>€6.00</td>
+                    </tr>
+                    <tr>
+                        <td>3x</td>
+                        <td> Cassis </td>
+                        <td>€9.00</td>
+                    </tr>
+                </table>
+
+                <table border="0">
+                    <tr>
+                        <td>4x</td>
+                        <td>Diner Maandag t/m Woensdag</td>
+                        <td>€130.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td>Sourcy Blue 0.75L</td>
+                        <td>€15.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td> Lipton Green Tea </td>
+                        <td>€6.00</td>
+                    </tr>
+                    <tr>
+                        <td>3x</td>
+                        <td> Cassis </td>
+                        <td>€9.00</td>
+                    </tr>
+                </table>
+
+                <table border="0">
+                    <tr>
+                        <td>4x</td>
+                        <td>Diner Maandag t/m Woensdag</td>
+                        <td>€130.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td>Sourcy Blue 0.75L</td>
+                        <td>€15.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td> Lipton Green Tea </td>
+                        <td>€6.00</td>
+                    </tr>
+                    <tr>
+                        <td>3x</td>
+                        <td> Cassis </td>
+                        <td>€9.00</td>
+                    </tr>
+                </table>
+
+                <table border="0">
+                    <tr>
+                        <td>4x</td>
+                        <td>Diner Maandag t/m Woensdag</td>
+                        <td>€130.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td>Sourcy Blue 0.75L</td>
+                        <td>€15.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td> Lipton Green Tea </td>
+                        <td>€6.00</td>
+                    </tr>
+                    <tr>
+                        <td>3x</td>
+                        <td> Cassis </td>
+                        <td>€9.00</td>
+                    </tr>
+                </table>
+
+                <table border="0">
+                    <tr>
+                        <td>4x</td>
+                        <td>Diner Maandag t/m Woensdag</td>
+                        <td>€130.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td>Sourcy Blue 0.75L</td>
+                        <td>€15.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td> Lipton Green Tea </td>
+                        <td>€6.00</td>
+                    </tr>
+                    <tr>
+                        <td>3x</td>
+                        <td> Cassis </td>
+                        <td>€9.00</td>
+                    </tr>
+                </table>
+
+                <table border="0">
+                    <tr>
+                        <td>4x</td>
+                        <td>Diner Maandag t/m Woensdag</td>
+                        <td>€130.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td>Sourcy Blue 0.75L</td>
+                        <td>€15.00</td>
+                    </tr>
+                    <tr>
+                        <td>2x</td>
+                        <td> Lipton Green Tea </td>
+                        <td>€6.00</td>
+                    </tr>
+                    <tr>
+                        <td>3x</td>
+                        <td> Cassis </td>
+                        <td>€9.00</td>
+                    </tr>
+                </table>
+
+                <div class="total_bill">
+                    Total: <span class="bill_total_price">€ 160.00 </span>
+                </div>
+            </div>
+
+
+
+
+            <div class="show_hide_order show_orders d_none">
+
+
+                <div class="order_div">
+                    <p class="order_name"> Round 3 19:55 </p>
+                    <table border="0">
+                        <tr>
+                            <td>2x</td>
+                            <td>Luxary Geback Chocolade</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1x</td>
+                            <td>Vanilli ijs</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1x</td>
+                            <td>Mango ijs</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2x</td>
+                            <td> Muffin Chocolade </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2x</td>
+                            <td> Spekkoek Pandan </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="order_div">
+                    <p class="order_name"> Order with app 19:37 </p>
+                    <table border="0">
+                        <tr>
+                            <td>1x</td>
+                            <td>Cassis</td>
+                            <td>€3.00</td>
+                        </tr>
+                        <tr>
+                            <td>1x</td>
+                            <td>Sourcy Blue 0.75L</td>
+                            <td>€7.50</td>
+                        </tr>
+                        <tr>
+                            <td>1x</td>
+                            <td>Lipton Green Tea</td>
+                            <td>€3.00</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="order_div">
+                    <p class="order_name"> Round 3 19:55 </p>
+                    <table border="0">
+                        <tr>
+                            <td>2x</td>
+                            <td>Luxary Geback Chocolade</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1x</td>
+                            <td>Vanilli ijs</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1x</td>
+                            <td>Mango ijs</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2x</td>
+                            <td> Muffin Chocolade </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2x</td>
+                            <td> Spekkoek Pandan </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="order_div">
+                    <p class="order_name"> Order with app 19:37 </p>
+                    <table border="0">
+                        <tr>
+                            <td>1x</td>
+                            <td>Cassis</td>
+                            <td>€3.00</td>
+                        </tr>
+                        <tr>
+                            <td>1x</td>
+                            <td>Sourcy Blue 0.75L</td>
+                            <td>€7.50</td>
+                        </tr>
+                        <tr>
+                            <td>1x</td>
+                            <td>Lipton Green Tea</td>
+                            <td>€3.00</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+
+            </div>
+
+            <div class="show_actions">
+                SHOW ACTIONS
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- order page -->
+        <div id="order_section" class="order_page common_section d_none">
+            <div class="tray">
+                Your tray
+            </div>
+
+            <div class="mini_sentence">
+                It seems that your tray is empty. Please add your first item via the menu before you can
+                order it here.
+            </div>
+
+            <div class="order_line grid_line">
+                <div class="product_name_num">
+                    <span class="material-icons rmv_btn"> remove </span>
+                    <span class="spec_order_num">1</span>
+                    <span class="material-icons add_btn"> add </span>
+                    <span class="cart_product_name"> Koffie </span>
+
+                </div>
+                <div class="produt_price">
+                    €2.90
+                </div>
+            </div>
+
+            <div class="subtotal">
+                Subtotal: <span class="sub_total_price">€2.90 </span>
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- left menu / service design  -->
+        <div class="service_menu">
+            <div class="cross" onclick="closeMenu()">
+                <img src="images/close.svg" alt="" class="crossMenuImg">
+                <span class="close_txt">CLOSE</span>
+            </div>
+
+            <div class="main_menu">
+
+                <div class="common_menu_item"> IK WIL Graag Een Ober </div>
+                <div class="common_menu_item"> Wasabi </div>
+                <div class="common_menu_item"> Gember </div>
+                <div class="common_menu_item"> Soyasaus </div>
+                <div class="common_menu_item leave_location">
+                    <img src="images/logout.svg" alt="" class="logout">
+                    Leave Location
+                </div>
+
+                <div class="common_menu_item">
+                    <img src="images/padlock.svg" alt="" class="logout">
+                    Privacy Policy
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+        <!-- item cart popup section  -->
+        <div id="item_cart" class="d_none">
+            <div class="cross_tab">
+                <img src="images/close.svg" alt="" class="crossImg" onclick="crossCart()">
+            </div>
+
+            <div id="cart_image_div">
+                <img src="" alt="" class="cartImg">
+            </div>
+
+
+            <div class="item_name"></div>
+            <div class="item_price"> </div>
+
+
+            <div class="flex_price">
+
+                <div class="cart_holder">
+
+                    <span class="material-icons cart_minus"> remove </span>
+                    <span class="cart_val"> 1 </span>
+                    <span class="material-icons cart_plus"> add </span>
+
+                </div>
+
+                <div class="cart_price"> </div>
+
+                <!-- popped up item location which will let the plus minus of popup to know where to add minus value  -->
+                <input type="hidden" class="popped_up_loc">
+            </div>
+
+            <center>
+                <button id="addOrder" onclick="addOrder()"> Add To Order </button>
+            </center>
+
+        </div>
+
+
+
+
+
+        <div class="dim_dark d_none"></div>
+
+
+
+
+
+        <input type="hidden" id="last_clicked" value="footer_home">
+
+
+
+        <div class="last_spacer"></div>
+
+        <div id="footer_nav">
+
+            <div class="footer_menu footer_home active" onclick="activeHome()">
+                <img src="images/book.svg" alt="" class="footerImg"> <br>
+                Menu
+            </div>
+
+            <div class="footer_menu footer_bill" onclick="activeBillPage()">
+                <img src="images/bill.svg" alt="" class="footerImg"> <br>
+                Bill
+            </div>
+
+            <div class="footer_menu footer_order" onclick="activeOrders()">
+
+                <div id="orders">
+                    <span class="order_num">0</span> / 20
+                </div>
+
+                <img src="images/dishes.svg" alt="" class="footerImg"> <br>
+                Order
+
+            </div>
+
+            <div class="footer_menu footer_service" onclick="activeLeftMenu()">
+                <img src="images/service.svg" alt="" class="footerImg"> <br>
+                Service
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+
+
+
+    <script src="index.js"></script>
+    <!-- <script src="search_bar/suggestions.js"></script>
+    <script src="search_bar/search_scripts.js"></script> -->
+
+
+</body>
+
+</html>
